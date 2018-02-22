@@ -12,7 +12,7 @@ gen-readme: gen-output					## Generate README.md (using docker-verb)
 gen-output:	reg      						## Generate the sample output
 	mkdir -p ./sample ; \
 	cd ./sample; \
-	boilr template use boilr-docs .; \
+	boilr template use docs .; \
 	tree -a > ./../docs/boilr-output.md; \
 	cd ..; \
 	rm -rf ./sample;
@@ -20,7 +20,7 @@ gen-output:	reg      						## Generate the sample output
 
 # Todo: Make this dynamic
 reg:														## Register the current template locally
-	boilr template save $(PWD) boilr-docs -f
+	boilr template save $(PWD) docs -f
 .PHONY: reg
 
 
